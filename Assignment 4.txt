@@ -1,0 +1,379 @@
+/**
+
+ * Finish all the assignments before next class. There is no standard answer for this assignment.
+
+ * 
+
+ * @author Jia
+
+ */
+
+ 
+
+1. Write JUnitTest for all the problems in assignemnt3.
+
+For 1:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class PowerTest {
+
+	@Test
+	public void test() {
+		PowerofThree test = new PowerofThree();
+		int[] output = test.Power(4);
+		int[] expectedOutput = {1,3,9,27};
+		Assert.assertArrayEquals(expectedOutput, output);
+		
+		int[] output1 = test.Power(5);
+		int[] expectedOutput1 = {1,3,9,27,81};
+		Assert.assertArrayEquals(expectedOutput1, output1);
+	}
+
+}
+
+For 2:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class NumberofDigitsTest {
+
+	@Test
+	public void test() {
+		NumberofDigits t = new NumberofDigits();
+		int output2 = t.count(100);
+		assertEquals(1 , output2);
+		
+		int output3 = t.count(46);
+		assertEquals(0 , output3);
+	}
+
+}
+
+For 3:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class evenOddTest {
+
+	@Test
+	public void test() { 
+		evenOdd t = new evenOdd();
+		int[] output = t.code(5);
+		int[] expectedOutput = {1,3,5,7,9};
+		Assert.assertArrayEquals(expectedOutput, output);
+	
+	}
+
+}
+
+For 4:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class PascalTest {
+
+	@Test
+	public void test() {
+		PascalTriangle t = new PascalTriangle();
+		String output = t.pt(2);
+		Assert.assertEquals("111",output);
+	}
+
+}
+
+For 5:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class ReverseVowelsTest {
+
+	@Test
+	public void test() {
+		ReverseVowelsTest rv = new ReverseVowelsTest();
+		String output = rv.reverse("Hie");
+		Assert.assertEquals("Hei",output);
+
+For 6:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class countLastWordTest {
+
+	@Test
+	public void test() {
+		countLastWordTest cv = new countLastWordTest();
+		String output = cv.reverse("I like Seattle");
+		Assert.assertEquals(7,output);
+
+For 7:-
+package or.practice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class ReverseWords {
+
+	@Test
+	public void test() {
+		ReverseWords rw = new ReverseWords();
+		String output = rw.reverse("i love to meditate");
+		Assert.assertEquals("meditate to love i",output);
+
+2. Implement Class MusicAlbum which encapsulated a music Album, each album has a string variable albumTitle and a String variable singer representing the name of singer, 
+double variable price representing the price of album, objects of this class are Initialized using all of its instance variables.
+
+The class has accessor methods for all its Variables and a mutator method for price.
+
+package org.prime;
+
+public class musicAlbum {
+             private String albumTitle;
+             private String singer;
+             private double price;
+             
+             public musicAlbum(String albumTitle,String singer)
+             {
+            	 this.albumTitle= albumTitle;
+            	 this.singer = singer;
+             }
+                          
+             public String getalbumTitle()
+             {
+            	 return albumTitle;
+             }
+             
+             public String getsinger()
+             {
+            	 return singer;
+             }
+             public void setprice(double p)
+             {
+            	 price = p;
+             }
+             public double getprice()
+             {
+            	 return price;
+            	 
+             }
+            public static void main(String[] args) {
+	    musicAlbum ma = new musicAlbum("LP","XYZ");
+	    //double p;
+	    ma.setprice(100);
+	    //p = ma.getprice();
+	    System.out.println("album Name is:-"+ma.getalbumTitle()+
+	    		"\nSinger :-"+ma.getsinger()+"\nPRice is :-"+ma.getprice());
+	}
+}
+
+3. Write a class named GasTank containing:
+
+An instance variable named amount of type double, initialized to 0.
+
+A method named addGas that accepts a parameter of type double . The value of the amount instance variable is increased by the value of the parameter.
+
+A method named useGas that accepts a parameter of type double . The value of the amount instance variable is decreased by the value of the parameter.
+
+A method named getGasLevel that accepts no parameters. getGasLevel returns the value of the amount instance variable.
+
+package org.prime;
+
+public class gasTank {
+          double amount =0;
+          
+      public void addGas(double add)
+      {
+    	  amount = amount + add;
+      }
+      
+      public void useGas(double use)
+      {
+    	  amount = amount - use;
+      }
+      
+      public double getGasLevel()
+      {
+    	  return amount;
+      }
+	public static void main(String[] args) {
+	  gasTank GT = new gasTank();
+	  GT.addGas(10);
+	  GT.useGas(5);
+	  System.out.println("Gas available in the tank is :-"+GT.getGasLevel());
+
+	}
+
+}
+
+4. Design and implement a class called Car. You need to create necessary attributes for this class, and method if needed
+
+Define the Car constructor to initialize these values (in that order). Include getter and setter methods for all instance data.
+package org.prime;
+
+public class car {
+         private String carType;
+         private String carModel;
+         private String carColor;
+         private gasTank gt = new gasTank();
+         
+         public void setcarType(String carType)
+         {
+        	 carType = carType;
+         }
+         public String getcarType()
+         {
+        	 return carType;
+         }
+         
+         public void setcarModel(String carModel)
+         {
+        	 carModel = carModel;
+         }
+         public String getcarModel()
+         {
+        	 return carModel;
+         }
+         
+         public void setcarColor(String carColor)
+         {
+        	 carColor = carColor;
+         }
+         public String getcarColor()
+         {
+        	 return carColor;
+         }
+         
+         public void addGas(double add){
+       	 gt.addGas(add);
+         }
+         
+         public void useGas(double use)
+         {
+        	 gt.useGas(use);
+         }
+         public double getGasLevel()
+         {
+        	 return gt.getGasLevel();
+         }
+         public car(String carType,String carModel, String carColor)
+         {
+        	this.carType=carType; 
+        	this.carModel=carModel;
+        	this.carColor=carColor;
+        	        	
+         }
+	public static void main(String[] args) {
+		car C = new car("Hyundai","i20-Sportz","White");
+		System.out.println("CarType  :"+C.getcarType()+"\nCarModel :"+C.getcarModel()+"\nCarColor :"
+		+C.getcarColor());
+
+	}
+
+}
+
+5. Combine with problem 3 and 4, define a class named Driver that contains methods like drive and addGas so that the driver can drive the car.
+package org.prime;
+
+public class driver {
+                   
+        public void drive(car c,double use)
+        {
+        	c.useGas(use);
+        }
+	public static void main(String[] args) {
+		driver sid = new driver();
+		car c = new car("Audi","a8","White");
+		c.addGas(100);
+		sid.drive(c, 60);
+		System.out.println(c.getcarType());
+		System.out.println(c.getcarColor());
+		System.out.println(c.getcarModel());
+		System.out.println(c.getGasLevel());	
+		}
+}
+
+Bonus: 
+
+Design a java class that encapsulate the data structure Stack (Last in First out). The class has 2 methods:
+
+(push): method for adding items to stack, the push operation adds items to the top of the list
+
+(pop): method for retrieving items from the stack. The pop operation removes an item from the top of the list, and returns its value to the caller.
+
+In the case of overflow the user should be informed with a message
+
+In the case of underflow, the user should be informed with a message & a value of zero is returned.
+
+
+
+Assumptions: The stack will hold up to 10 integer values.
+
+package org.prime;
+
+public class stack {
+
+	private int stk[];
+	private int tos;
+	int i;
+
+		stack(int size) {
+		stk = new int[size];
+		tos = -1;
+	}
+
+	void push(int item) {
+		if (tos == stk.length - 1) 
+			System.out.println("Stack is full.");
+		else
+			stk[++tos] = item;
+	}
+
+	
+	int pop() {
+		if (tos < 0) {
+			System.out.println("Stack underflow.");
+			return 0;
+		} else
+			return stk[tos--];
+	}
+
+	public static void main(String[] args) {
+	
+		stack mystack = new stack(10);
+		
+		
+		for (int i = 0; i < 10; i++)
+			mystack.push(i);
+		
+		System.out.println("Stack in mystack1:");
+		for (int i = 0; i < 10; i++)
+			System.out.println(mystack.pop());
+		}
+}
+
